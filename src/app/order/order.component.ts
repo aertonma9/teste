@@ -9,7 +9,7 @@ import {CartItem} from '../restaurant-detalhi/shopping-cart/cart-item.model';
   styleUrls: ['./order.component.css']
 })
 export class OrderComponent implements OnInit {
-
+  delivery: number = 8;
   paymentOptions: RadioOption[] = [
 
     {label: 'Dinheiro', value: 'MON'},
@@ -17,12 +17,15 @@ export class OrderComponent implements OnInit {
     {label: 'Cartão Refeição', value: 'REF'}
   ];
 
-
-
   constructor(private orderService: OrderService) { }
 
   ngOnInit() {
   }
+
+  itemsValue(): number {
+    return this.orderService.itemsValue();
+  }
+
   cartItems(): CartItem[] {
     return this.orderService.cartItems();
   }
@@ -36,5 +39,9 @@ export class OrderComponent implements OnInit {
   }
   remove(item: CartItem) {
     this.orderService.remove(item);
+  }
+
+  checkeOrder(order: any){
+    console.log(order);
   }
 }
