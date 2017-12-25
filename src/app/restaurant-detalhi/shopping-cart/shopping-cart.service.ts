@@ -38,3 +38,4 @@ export class ShoppingCartService {
       .reduce((prev, value ) => prev + value , 0);
   }
 }
+ 
