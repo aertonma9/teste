@@ -11,7 +11,7 @@ import { OrderSummaryComponent } from 'app/order-summary/order-summary.component
 
 export const ROUTES: Routes = [
   {path: '' ,component: HomeComponent},
-  {path: 'about' ,component: AboutComponent},
+  {path: 'about' ,loadChildren: './about/about.module#AboutModule'},
   {path: 'restaurant' ,component: RestaurantsComponent},
   {path: 'restaurant/:id' ,component: RestaurantDetalhiComponent,
    children: [
